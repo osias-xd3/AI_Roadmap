@@ -121,7 +121,7 @@ export const AITutorDrawer: React.FC<AITutorDrawerProps> = ({
                 <div className="flex items-center gap-2">
                   <h2 className="text-base font-extrabold text-white">AI Roadmap Mentor</h2>
                   <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-gradient-to-r from-cyan-500/15 to-purple-500/15 text-cyan-300 border border-cyan-500/30">
-                    Gemini 2.5 Flash
+                    Gemini 3.8 Flash (Latest)
                   </span>
                 </div>
                 <p className="text-xs text-slate-400">
@@ -186,7 +186,7 @@ export const AITutorDrawer: React.FC<AITutorDrawerProps> = ({
             {loading && (
               <div className="flex gap-3 items-center text-cyan-300 text-xs py-2 bg-slate-900/50 px-3 rounded-xl border border-white/5 animate-pulse">
                 <Bot className="w-4 h-4 text-cyan-400" />
-                <span>Gemini 2.5 is generating intuitive math & code...</span>
+                <span>Gemini 3.8 is generating intuitive math & code...</span>
               </div>
             )}
             <div ref={messagesEndRef} />

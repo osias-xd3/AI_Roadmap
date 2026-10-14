@@ -464,7 +464,7 @@ export default function Dashboard() {
           AI Roadmap v3 Hub • 100% Free Resources & Certifications
         </p>
         <p className="text-[11px] text-slate-400">
-          Powered by Next.js, Tailwind CSS, Google Gemini 2.5 Flash, and Cloud Firestore. Deployed on Vercel at $0 cost.
+          Powered by Next.js, Tailwind CSS, Google Gemini 3.8 Flash (Latest), and Cloud Firestore. Deployed on Vercel at $0 cost.
         </p>
       </footer>
 

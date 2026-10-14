@@ -45,8 +45,9 @@ You MUST respond strictly with a valid JSON array of objects, with NO surroundin
 
     const ai = new GoogleGenAI({ apiKey });
 
+    const model = process.env.GEMINI_MODEL || "gemini-3.8-flash";
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model,
       contents: prompt,
       config: {
         tools: [{ googleSearch: {} }],

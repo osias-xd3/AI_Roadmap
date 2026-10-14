@@ -52,8 +52,9 @@ export async function POST(req: NextRequest) {
       systemInstruction += `\n\nCurrent Student Phase Context: The student is asking in the context of "${phase_context}". Focus on concepts and requirements pertinent to this phase.`;
     }
 
+    const model = process.env.GEMINI_MODEL || "gemini-3.8-flash";
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model,
       contents,
       config: {
         systemInstruction,

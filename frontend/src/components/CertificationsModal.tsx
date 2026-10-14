@@ -88,7 +88,7 @@ export const CertificationsModal: React.FC<CertificationsModalProps> = ({
                 Certification Directory ({certifications.length} Tracked)
               </h2>
               <p className="text-xs text-slate-400">
-                Audited against live web changes via Gemini 2.5 Google Search grounding
+                Audited against live web changes via Gemini 3.8 Google Search grounding
               </p>
             </div>
           </div>

@@ -23,13 +23,26 @@ export const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfi
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({
+  prompt: "select_account",
+});
 
 export const signInWithGoogle = async (): Promise<User> => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
     return result.user;
   } catch (error) {
-    console.error("Google sign-in error:", error);
+    console.error("Google popup sign-in error:", error);
+    throw error;
+  }
+};
+
+export const signInWithGoogleRedirect = async (): Promise<void> => {
+  try {
+    const { signInWithRedirect } = await import("firebase/auth");
+    await signInWithRedirect(auth, googleProvider);
+  } catch (error) {
+    console.error("Google redirect sign-in error:", error);
     throw error;
   }
 };

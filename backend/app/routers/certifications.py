@@ -148,7 +148,7 @@ You MUST respond strictly with a valid JSON array of objects, with NO surroundin
         )
 
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model=getattr(settings, "gemini_model", "gemini-3.8-flash"),
             contents=prompt,
             config=config,
         )

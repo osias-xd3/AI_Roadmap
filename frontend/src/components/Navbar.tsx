@@ -106,13 +106,23 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
             </div>
           ) : (
-            <button
-              onClick={signIn}
-              className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-200 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 rounded-xl transition active:scale-95 shadow-sm"
-            >
-              <LogIn className="w-4 h-4 text-cyan-400" />
-              <span className="hidden sm:inline">Google Sign-In</span>
-            </button>
+            <div className="flex items-center gap-1.5">
+              <button
+                onClick={signIn}
+                className="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-slate-200 hover:text-white bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 rounded-xl transition active:scale-95 shadow-sm"
+                title="Sign in with Google Account"
+              >
+                <LogIn className="w-4 h-4 text-cyan-400" />
+                <span className="hidden sm:inline">Google Sign-In</span>
+              </button>
+              <button
+                onClick={continueAsGuest}
+                className="hidden md:flex items-center gap-1 px-2.5 py-2 text-xs font-medium text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/25 rounded-xl transition active:scale-95"
+                title="Try out the roadmap without logging in"
+              >
+                <span>Demo Student</span>
+              </button>
+            </div>
           )}
         </div>
       </div>

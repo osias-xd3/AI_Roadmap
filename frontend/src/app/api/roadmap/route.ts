@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import roadmapData from "../../../data/roadmap_v3.json";
+import roadmapData from "@/data/roadmap_v3.json";
 
 export async function GET() {
   try {

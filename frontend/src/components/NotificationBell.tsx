@@ -142,11 +142,11 @@ export const NotificationBell: React.FC = () => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Certification Alerts"
-        className="relative p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-slate-300 hover:text-white transition-all border border-slate-700/50 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="relative p-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white transition-all border border-white/[0.08] hover:border-white/15 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 active:scale-95"
       >
-        <Bell className="w-5 h-5" />
+        <Bell className="w-4 h-4 text-slate-300" />
         {unreadCount > 0 && (
-          <span className="absolute -top-1 -right-1 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-rose-600 px-1 text-[11px] font-bold text-white shadow-md animate-pulse">
+          <span className="absolute -top-1 -right-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-gradient-to-r from-rose-500 to-pink-500 px-1 text-[10px] font-bold text-white shadow-md animate-pulse">
             {unreadCount > 9 ? "9+" : unreadCount}
           </span>
         )}
@@ -154,12 +154,12 @@ export const NotificationBell: React.FC = () => {
 
       {/* Popover Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 mt-3 w-80 sm:w-96 rounded-2xl bg-slate-900 border border-slate-800 shadow-2xl z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-150">
+        <div className="absolute right-0 mt-3 w-80 sm:w-96 rounded-2xl bg-slate-950/95 border border-white/[0.1] shadow-2xl shadow-black/80 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-150 backdrop-blur-2xl">
           {/* Header */}
-          <div className="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-900/90 backdrop-blur-sm">
+          <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.08] bg-slate-900/80 backdrop-blur-sm">
             <div className="flex items-center gap-2">
-              <Bell className="w-4 h-4 text-blue-400" />
-              <h3 className="text-sm font-semibold text-white">Certification Watchdog</h3>
+              <Bell className="w-4 h-4 text-cyan-400" />
+              <h3 className="text-sm font-bold text-white">Watchdog Alerts</h3>
             </div>
             <div className="flex items-center gap-2">
               <button

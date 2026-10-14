@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
-import roadmapData from "../../../../data/roadmap_v3.json";
-import { db } from "../../../../lib/firebase";
+import roadmapData from "@/data/roadmap_v3.json";
+import { db } from "@/lib/firebase";
 import { collection, doc, setDoc } from "firebase/firestore";
 
 export const maxDuration = 60;

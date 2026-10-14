@@ -110,22 +110,22 @@ export const AITutorDrawer: React.FC<AITutorDrawerProps> = ({
 
       {/* Slide-out Drawer Panel */}
       <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-lg bg-slate-950 border-l border-slate-800 flex flex-col shadow-2xl">
+        <div className="w-screen max-w-lg bg-slate-950 border-l border-white/[0.08] flex flex-col shadow-2xl backdrop-blur-2xl">
           {/* Drawer Header */}
-          <div className="p-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/60">
+          <div className="p-4 border-b border-white/[0.08] flex items-center justify-between bg-slate-900/70">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-                <Bot className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg shadow-indigo-500/25 border border-white/10">
+                <Bot className="w-5 h-5 text-cyan-200" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h2 className="text-base font-bold text-white">AI Roadmap Tutor</h2>
-                  <span className="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                    Gemini 2.5
+                  <h2 className="text-base font-extrabold text-white">AI Roadmap Mentor</h2>
+                  <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-gradient-to-r from-cyan-500/15 to-purple-500/15 text-cyan-300 border border-cyan-500/30">
+                    Gemini 2.5 Flash
                   </span>
                 </div>
                 <p className="text-xs text-slate-400">
-                  {activePhaseTitle ? `Context: ${activePhaseTitle}` : "Phases 0–11 Technical Mentor"}
+                  {activePhaseTitle ? `Context: ${activePhaseTitle}` : "Phases 0–11 Technical Mentor (100% Free)"}
                 </p>
               </div>
             </div>
@@ -134,13 +134,13 @@ export const AITutorDrawer: React.FC<AITutorDrawerProps> = ({
               <button
                 onClick={handleResetChat}
                 title="Reset conversation"
-                className="p-2 text-slate-400 hover:text-slate-200 hover:bg-slate-800 rounded-lg transition"
+                className="p-2 text-slate-400 hover:text-white hover:bg-slate-800/80 rounded-xl transition"
               >
                 <RotateCcw className="w-4 h-4" />
               </button>
               <button
                 onClick={onClose}
-                className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition"
+                className="p-2 text-slate-400 hover:text-white hover:bg-slate-800/80 rounded-xl transition"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -148,9 +148,9 @@ export const AITutorDrawer: React.FC<AITutorDrawerProps> = ({
           </div>
 
           {/* Strict Scope Guardrail Banner */}
-          <div className="px-4 py-2 bg-blue-950/30 border-b border-blue-900/30 flex items-center gap-2 text-[11px] text-blue-300">
-            <ShieldAlert className="w-3.5 h-3.5 shrink-0 text-blue-400" />
-            <span>Strictly guarded to AI, ML, Data Science, Coding, and Roadmap queries.</span>
+          <div className="px-4 py-2 bg-indigo-500/[0.08] border-b border-indigo-500/20 flex items-center gap-2 text-[11px] text-indigo-300">
+            <ShieldAlert className="w-3.5 h-3.5 shrink-0 text-indigo-400" />
+            <span>Strictly dedicated to AI, ML, Math, NumPy from-scratch, and CS code.</span>
           </div>
 
           {/* Messages scroll area */}
@@ -163,54 +163,59 @@ export const AITutorDrawer: React.FC<AITutorDrawerProps> = ({
                 }`}
               >
                 {msg.role !== "user" && (
-                  <div className="w-7 h-7 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center shrink-0 mt-0.5 border border-blue-500/20">
+                  <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-cyan-500/20 to-indigo-500/20 text-cyan-300 flex items-center justify-center shrink-0 mt-0.5 border border-cyan-500/30">
                     <Bot className="w-4 h-4" />
                   </div>
                 )}
                 <div
                   className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap ${
                     msg.role === "user"
-                      ? "bg-blue-600 text-white rounded-br-none shadow-md shadow-blue-600/10"
-                      : "bg-slate-900 text-slate-200 border border-slate-800 rounded-bl-none shadow-sm"
+                      ? "bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-br-none shadow-md shadow-indigo-600/20"
+                      : "bg-slate-900/90 text-slate-200 border border-white/[0.08] rounded-bl-none shadow-md backdrop-blur-sm"
                   }`}
                 >
                   {msg.content}
                 </div>
                 {msg.role === "user" && (
-                  <div className="w-7 h-7 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center shrink-0 mt-0.5 border border-slate-700">
+                  <div className="w-7 h-7 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center shrink-0 mt-0.5 border border-white/10">
                     <UserIcon className="w-4 h-4" />
                   </div>
                 )}
               </div>
             ))}
             {loading && (
-              <div className="flex gap-3 items-center text-slate-400 text-xs py-2">
-                <Bot className="w-4 h-4 text-blue-400 animate-pulse" />
-                <span>Thinking through code and math...</span>
+              <div className="flex gap-3 items-center text-cyan-300 text-xs py-2 bg-slate-900/50 px-3 rounded-xl border border-white/5 animate-pulse">
+                <Bot className="w-4 h-4 text-cyan-400" />
+                <span>Gemini 2.5 is generating intuitive math & code...</span>
               </div>
             )}
             <div ref={messagesEndRef} />
           </div>
 
           {/* Quick Starter Chips */}
-          <div className="px-4 py-2 border-t border-slate-900 bg-slate-950/80">
+          <div className="px-4 py-2 border-t border-white/[0.06] bg-slate-950/80">
             <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs no-scrollbar">
-              {STARTER_PROMPTS.map((promptText, idx) => (
+              {[
+                { text: "Linear Regression in NumPy", color: "border-cyan-500/30 bg-cyan-950/30 text-cyan-300" },
+                { text: "Explain Backprop Calculus", color: "border-emerald-500/30 bg-emerald-950/30 text-emerald-300" },
+                { text: "Recommend Phase 5 Paper", color: "border-purple-500/30 bg-purple-950/30 text-purple-300" },
+                { text: "GitHub Project Structure", color: "border-amber-500/30 bg-amber-950/30 text-amber-300" },
+              ].map((chip, idx) => (
                 <button
                   key={idx}
-                  onClick={() => handleSend(promptText)}
+                  onClick={() => handleSend(chip.text)}
                   disabled={loading}
-                  className="shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-850 hover:border-blue-500/40 border border-slate-800 text-slate-300 text-[11px] transition"
+                  className={`shrink-0 px-2.5 py-1 rounded-full border ${chip.color} text-[11px] font-medium transition hover:brightness-125 active:scale-95`}
                 >
-                  <Sparkles className="w-3 h-3 inline mr-1 text-blue-400" />
-                  {promptText}
+                  <Sparkles className="w-3 h-3 inline mr-1" />
+                  {chip.text}
                 </button>
               ))}
             </div>
           </div>
 
           {/* Input Box */}
-          <div className="p-4 border-t border-slate-850 bg-slate-900/40">
+          <div className="p-4 border-t border-white/[0.08] bg-slate-900/60">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -224,12 +229,12 @@ export const AITutorDrawer: React.FC<AITutorDrawerProps> = ({
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about math, NumPy from-scratch, papers, or code..."
                 disabled={loading}
-                className="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
+                className="flex-1 bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
               />
               <button
                 type="submit"
                 disabled={loading || !input.trim()}
-                className="p-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl disabled:opacity-50 transition shadow-lg shadow-blue-600/20"
+                className="p-2.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white rounded-xl disabled:opacity-50 transition shadow-lg shadow-indigo-600/25 active:scale-95"
               >
                 <Send className="w-4 h-4" />
               </button>

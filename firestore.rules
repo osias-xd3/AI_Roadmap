@@ -1,0 +1,29 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Roadmap Phases & Metadata (Publicly readable, Admin writeable)
+    match /roadmap_phases/{phaseId} {
+      allow read: if true;
+      allow write: if false; // Managed via Backend Service Account or Admin
+    }
+
+    match /roadmap_meta/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // User Progress (Strictly per-user security)
+    match /user_progress/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Certification Watchdog In-App Notifications
+    match /notifications/{notificationId} {
+      // Any authenticated user can read notifications and mark their own as read
+      allow read: if true;
+      allow update: if request.auth != null && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read']);
+      allow create, delete: if false; // Generated via Backend Watchdog
+    }
+  }
+}

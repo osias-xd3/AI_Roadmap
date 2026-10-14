@@ -1,0 +1,41 @@
+# Environment variables (NEVER COMMIT SECRETS)
+.env
+.env.*
+!.env.example
+*.env
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js build outputs
+.next/
+out/
+build/
+dist/
+
+# Python & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+*.egg-info/
+.pytest_cache/
+
+# Firebase & GCP secrets
+*-service-account*.json
+firebase-debug.log*
+.firebase/
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

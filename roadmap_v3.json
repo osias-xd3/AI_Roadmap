@@ -1,0 +1,916 @@
+{
+  "metadata": {
+    "title": "AI Roadmap v3: Zero to Advanced (100% Free Resources)",
+    "version": "3.0",
+    "last_verified": "2026-10-14",
+    "timeline": "14 to 20 months at 10 to 15 hrs/week",
+    "core_philosophy": "Do not rush the math and the build it from scratch steps. They are what separate people who use AI from people who understand it."
+  },
+  "rules": [
+    "Every phase ends with a project on GitHub. No project, no moving on.",
+    "Code along. Never just watch.",
+    "Implement at least one algorithm from scratch per phase (NumPy only), then use the library version.",
+    "Read one paper per week from Phase 5 onward.",
+    "Track progress in this web app and your GitHub repo README."
+  ],
+  "self_check_gates": [
+    "End of each phase: explain the core idea out loud or in a short blog post without notes.",
+    "End of each phase: rebuild one piece (a metric, a layer, a pipeline step) from a blank file.",
+    "If you cannot do both, spend one more week on that phase before moving on."
+  ],
+  "weekly_schedule": {
+    "target_hours": "10 to 15 hrs/week",
+    "breakdown": [
+      "3 sessions x 2 hrs: Course lectures plus code along",
+      "1 session x 3 hrs: Project work",
+      "1 session x 1 hr: Paper reading or writing up what you learned",
+      "Weekend: Kaggle notebook or from scratch implementation"
+    ]
+  },
+  "first_30_days": [
+    {
+      "week": 1,
+      "tasks": "Watch 3Blue1Brown Linear Algebra and Neural Networks series. Start CS50P or skim Python if you already know it. Set up Git, GitHub, uv, and Google Colab."
+    },
+    {
+      "week": 2,
+      "tasks": "Kaggle Learn: Python, Pandas. Start Khan Academy Statistics. Begin Andrew Ng's Machine Learning Specialization, Course 1."
+    },
+    {
+      "week": 3,
+      "tasks": "Continue Ng's course. Kaggle Learn: Intro to ML. Publish your first EDA notebook."
+    },
+    {
+      "week": 4,
+      "tasks": "Finish Ng's Course 1. Implement linear regression from scratch in NumPy. Start StatQuest ML playlist alongside."
+    }
+  ],
+  "phases": [
+    {
+      "id": "phase-0",
+      "phase_number": 0,
+      "title": "Python and Modern Tooling",
+      "duration": "3 to 4 weeks",
+      "parallel_with": null,
+      "topics": [
+        "Python (OOP, generators, decorators, type hints, Pydantic)",
+        "Modern Python environment management with uv and linting with ruff",
+        "Git and GitHub workflows",
+        "Jupyter Notebook and Google Colab (free GPU)",
+        "Linux command line"
+      ],
+      "core_resources": [
+        {
+          "name": "CS50P: Introduction to Programming with Python (Harvard)",
+          "url": "https://cs50.harvard.edu/python",
+          "note": "Free course and certificate via CS50 OCW"
+        },
+        {
+          "name": "Missing Semester of Your CS Education (MIT)",
+          "url": "https://missing.csail.mit.edu",
+          "note": "Essential command line, Git, and shell tooling"
+        },
+        {
+          "name": "Kaggle Learn: Python",
+          "url": "https://www.kaggle.com/learn/python",
+          "note": "Fast interactive warmup with free certificate"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "freeCodeCamp: Scientific Computing with Python",
+          "url": "https://www.freecodecamp.org/learn/scientific-computing-with-python/",
+          "note": "Good supplemental practice"
+        },
+        {
+          "name": "Astral uv & ruff Documentation",
+          "url": "https://docs.astral.sh/uv/",
+          "note": "Industry standard Python tooling"
+        }
+      ],
+      "from_scratch_exercise": "Build a CLI data parser and validator using pure Python classes, file handling, and custom iterators.",
+      "projects": [
+        "Write a 200 line Python program with classes, type annotations, and file handling without looking up syntax constantly, hosted on GitHub with a uv lockfile."
+      ],
+      "done_when": "You can write a 200 line Python program with classes and file handling without looking things up constantly."
+    },
+    {
+      "id": "phase-1",
+      "phase_number": 1,
+      "title": "Math for AI",
+      "duration": "6 to 8 weeks",
+      "parallel_with": "phase-2",
+      "topics": [
+        "Linear Algebra: vectors, matrices, eigenvalues, SVD, PCA foundations",
+        "Calculus: derivatives, partial derivatives, chain rule, gradients (core of backpropagation)",
+        "Probability and Statistics: distributions, Bayes theorem, expectation, variance, MLE, hypothesis testing",
+        "Optimization basics: gradient descent, convexity, learning rates"
+      ],
+      "core_resources": [
+        {
+          "name": "3Blue1Brown: Essence of Linear Algebra & Essence of Calculus",
+          "url": "https://www.3blue1brown.com/",
+          "note": "Watch first for geometric intuition"
+        },
+        {
+          "name": "MIT 18.06 Linear Algebra (Gilbert Strang)",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+          "note": "Gold standard video lectures"
+        },
+        {
+          "name": "StatQuest with Josh Starmer (Statistics & Probability)",
+          "url": "https://statquest.org/",
+          "note": "Best visual intuition for statistics and MLE"
+        },
+        {
+          "name": "Khan Academy: Multivariable Calculus & Linear Algebra",
+          "url": "https://www.khanacademy.org/math/multivariable-calculus",
+          "note": "Practice exercises for partial derivatives and gradients"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "Mathematics for Machine Learning (Deisenroth, Faisal, Ong)",
+          "url": "https://mml-book.github.io/",
+          "note": "Free PDF textbook to keep as reference"
+        },
+        {
+          "name": "Harvard Stat 110 (Joe Blitzstein)",
+          "url": "https://projects.iq.harvard.edu/stat110/home",
+          "note": "Deep probability theory lectures"
+        },
+        {
+          "name": "Think Stats / Think Bayes (Allen Downey)",
+          "url": "https://greenteapress.com/wp/",
+          "note": "Free Python-oriented probability books"
+        }
+      ],
+      "from_scratch_exercise": "Write matrix multiplication, SVD/PCA via eigendecomposition, and numerical gradient checking in pure NumPy.",
+      "projects": [
+        "Publish a Jupyter notebook implementing PCA and multivariate gradient descent from scratch with Matplotlib contour visualizations."
+      ],
+      "done_when": "You can derive gradient descent for linear regression by hand and explain what a gradient is."
+    },
+    {
+      "id": "phase-2",
+      "phase_number": 2,
+      "title": "Data Science Toolkit",
+      "duration": "3 to 4 weeks",
+      "parallel_with": "phase-1",
+      "topics": [
+        "NumPy vectorization and broadcasting",
+        "Pandas and modern high speed alternatives (Polars, DuckDB)",
+        "Matplotlib and Seaborn for data visualization",
+        "SQL for analytical queries",
+        "Exploratory Data Analysis (EDA) and data cleaning"
+      ],
+      "core_resources": [
+        {
+          "name": "Kaggle Learn: Pandas, Data Visualization, Data Cleaning, Intro to SQL",
+          "url": "https://www.kaggle.com/learn",
+          "note": "Includes free certificates of completion"
+        },
+        {
+          "name": "Python Data Science Handbook (Jake VanderPlas)",
+          "url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+          "note": "Free online reference and code notebooks"
+        },
+        {
+          "name": "NumPy Official Tutorials",
+          "url": "https://numpy.org/numpy-tutorials/",
+          "note": "Essential for mastering array broadcasting"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "freeCodeCamp: Data Analysis with Python",
+          "url": "https://www.freecodecamp.org/learn/data-analysis-with-python/",
+          "note": "Project-based certification"
+        }
+      ],
+      "from_scratch_exercise": "Implement custom Z-score outlier removal, missing value imputation, and correlation matrices using only NumPy arrays.",
+      "projects": [
+        "Pick a real-world Kaggle dataset, perform a comprehensive Exploratory Data Analysis (EDA), and publish the notebook publicly."
+      ],
+      "done_when": "You can take a messy raw dataset, clean it, run SQL/Pandas aggregations, and surface 3 actionable insights with clean charts."
+    },
+    {
+      "id": "phase-3",
+      "phase_number": 3,
+      "title": "Classical Machine Learning",
+      "duration": "8 to 10 weeks",
+      "parallel_with": null,
+      "topics": [
+        "Linear and Logistic Regression",
+        "k-NN, Naive Bayes, Support Vector Machines (SVM)",
+        "Decision Trees, Random Forests, Gradient Boosting (XGBoost, LightGBM)",
+        "Unsupervised: k-means, Hierarchical Clustering, PCA, t-SNE, UMAP",
+        "Bias-variance tradeoff, cross-validation, regularization (L1/L2)",
+        "Evaluation metrics: precision, recall, F1, ROC-AUC",
+        "Feature engineering and handling imbalanced data"
+      ],
+      "core_resources": [
+        {
+          "name": "Machine Learning Specialization (Andrew Ng, Coursera)",
+          "url": "https://www.coursera.org/specializations/machine-learning-introduction",
+          "note": "Coursera audit is now preview-only; apply for Financial Aid or pair CS229 with Google ML Crash Course"
+        },
+        {
+          "name": "Google Machine Learning Crash Course",
+          "url": "https://developers.google.com/machine-learning/crash-course",
+          "note": "100% free and updated by Google"
+        },
+        {
+          "name": "Kaggle Learn: Intro to ML, Intermediate ML, Feature Engineering, ML Explainability",
+          "url": "https://www.kaggle.com/learn",
+          "note": "Hands-on practice with free certificates"
+        },
+        {
+          "name": "StatQuest Machine Learning Playlist",
+          "url": "https://www.youtube.com/c/joshstarmer",
+          "note": "Watch for visual intuition on every algorithm"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "Stanford CS229: Machine Learning (YouTube & Notes)",
+          "url": "https://cs229.stanford.edu/",
+          "note": "Rigorous mathematical formulation; study after Ng's course"
+        },
+        {
+          "name": "An Introduction to Statistical Learning with Python (ISLP)",
+          "url": "https://www.statlearning.com/",
+          "note": "Free PDF textbook with Python labs"
+        },
+        {
+          "name": "scikit-learn User Guide",
+          "url": "https://scikit-learn.org/stable/user_guide.html",
+          "note": "Official documentation and best practices"
+        },
+        {
+          "name": "freeCodeCamp: Machine Learning with Python",
+          "url": "https://www.freecodecamp.org/learn/machine-learning-with-python/",
+          "note": "Requires 5 projects for free certificate"
+        }
+      ],
+      "from_scratch_exercise": "Implement linear regression, logistic regression, k-NN, a decision tree, and k-means using only NumPy.",
+      "projects": [
+        "End-to-end House Price Prediction (regression with feature engineering)",
+        "Customer Churn or Fraud Detection (classification on imbalanced data with precision/recall tuning)",
+        "Enter one beginner Kaggle competition (Titanic, then a Tabular Playground Series)"
+      ],
+      "done_when": "You have built the 5 core ML algorithms in pure NumPy and submitted a pipeline to a live Kaggle leaderboard."
+    },
+    {
+      "id": "phase-4",
+      "phase_number": 4,
+      "title": "Deep Learning: ANN, CNN, RNN",
+      "duration": "10 to 12 weeks",
+      "parallel_with": null,
+      "topics": [
+        "Perceptron, Artificial Neural Networks (ANN/MLP), activation functions, loss functions",
+        "Backpropagation: derive by hand, then implement in code",
+        "Optimizers: SGD, momentum, RMSProp, Adam, AdamW, learning rate schedules",
+        "Regularization: dropout, batch norm, layer norm, weight decay, early stopping",
+        "Weight initialization, vanishing and exploding gradients",
+        "Convolutional Neural Networks (CNN): LeNet, AlexNet, VGG, ResNet, EfficientNet, ConvNeXt",
+        "Recurrent Neural Networks (RNN), LSTM, GRU, sequence modeling",
+        "Frameworks: PyTorch (primary), TensorFlow/Keras (secondary)"
+      ],
+      "core_resources": [
+        {
+          "name": "3Blue1Brown: Neural Networks (4-Part Video Series)",
+          "url": "https://www.3blue1brown.com/topics/neural-networks",
+          "note": "Best visual starting point"
+        },
+        {
+          "name": "Andrej Karpathy: Neural Networks: Zero to Hero (YouTube)",
+          "url": "https://karpathy.ai/zero-to-hero.html",
+          "note": "Essential: build micrograd (backprop) and neural nets from scratch"
+        },
+        {
+          "name": "PyTorch Official Tutorials (Learn the Basics)",
+          "url": "https://pytorch.org/tutorials/beginner/basics/intro.html",
+          "note": "Master tensors, autograd, and Dataset/DataLoader"
+        },
+        {
+          "name": "fast.ai: Practical Deep Learning for Coders",
+          "url": "https://course.fast.ai/",
+          "note": "Top-down, project-based deep learning"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "Dive into Deep Learning (d2l.ai)",
+          "url": "https://d2l.ai/",
+          "note": "Free interactive book with PyTorch code"
+        },
+        {
+          "name": "Andrew Ng: Deep Learning Specialization (Coursera)",
+          "url": "https://www.coursera.org/specializations/deep-learning",
+          "note": "Requires Financial Aid for full access"
+        },
+        {
+          "name": "MIT 6.S191: Introduction to Deep Learning",
+          "url": "http://introtodeeplearning.com/",
+          "note": "Free lectures updated yearly"
+        },
+        {
+          "name": "Deep Learning (Goodfellow, Bengio, Courville)",
+          "url": "https://www.deeplearningbook.org/",
+          "note": "Free theory reference book"
+        }
+      ],
+      "from_scratch_exercise": "Build a 2-layer neural network with manual backpropagation in NumPy, then build a CNN in PyTorch.",
+      "projects": [
+        "MNIST then CIFAR-10 classification (compare MLP vs custom CNN)",
+        "Time-series forecasting with LSTM/GRU",
+        "Reproduce a miniature ResNet with skip connections on a small dataset"
+      ],
+      "done_when": "You can write the backward pass of a linear + ReLU + CrossEntropy layer without autograd and train a PyTorch model on GPU."
+    },
+    {
+      "id": "phase-5",
+      "phase_number": 5,
+      "title": "NLP and Transformers",
+      "duration": "8 to 10 weeks",
+      "parallel_with": null,
+      "topics": [
+        "Tokenization (BPE, WordPiece), embeddings (Word2Vec, GloVe)",
+        "Seq2Seq and the Attention mechanism",
+        "The Transformer Architecture: Self-Attention, Multi-Head Attention, Positional Encoding (RoPE), KV Caching",
+        "Encoder vs Decoder models: BERT vs GPT",
+        "Text classification, Named Entity Recognition (NER), summarization, translation, Q&A"
+      ],
+      "core_resources": [
+        {
+          "name": "Stanford CS224n: NLP with Deep Learning",
+          "url": "https://web.stanford.edu/class/cs224n/",
+          "note": "Free lectures and assignments online"
+        },
+        {
+          "name": "Andrej Karpathy: Let's build GPT & Let's build the GPT Tokenizer",
+          "url": "https://www.youtube.com/@AndrejKarpathy",
+          "note": "Build a decoder-only Transformer and BPE tokenizer from scratch"
+        },
+        {
+          "name": "Hugging Face NLP & LLM Course (Chapters 1 to 4)",
+          "url": "https://huggingface.co/learn/llm-course",
+          "note": "Free with chapter certificate pathways"
+        },
+        {
+          "name": "Jay Alammar: The Illustrated Transformer",
+          "url": "https://jalammar.github.io/illustrated-transformer/",
+          "note": "Best visual walkthrough of self-attention"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "Original Paper: Attention Is All You Need (arXiv)",
+          "url": "https://arxiv.org/abs/1706.03762",
+          "note": "Mandatory paper reading"
+        },
+        {
+          "name": "Speech and Language Processing (Jurafsky & Martin)",
+          "url": "https://web.stanford.edu/~jurafsky/slp3/",
+          "note": "Free draft chapters online"
+        }
+      ],
+      "from_scratch_exercise": "Implement Scaled Dot-Product Attention, Multi-Head Attention, and a Byte-Pair Encoding (BPE) tokenizer from scratch.",
+      "projects": [
+        "Fine-tune BERT/RoBERTa for sentiment analysis or custom NER",
+        "Build and train a character/subword-level mini-GPT from scratch on a custom text corpus",
+        "Build a document summarization or Q&A pipeline using Hugging Face Transformers"
+      ],
+      "done_when": "You can code Multi-Head Self-Attention from a blank file and explain the exact tensor shapes at every step."
+    },
+    {
+      "id": "phase-6",
+      "phase_number": 6,
+      "title": "Computer Vision & Multimodal Foundations",
+      "duration": "6 to 8 weeks",
+      "parallel_with": null,
+      "topics": [
+        "Image classification and transfer learning",
+        "Object detection (YOLO, Faster R-CNN)",
+        "Semantic and instance segmentation (U-Net, Mask R-CNN, SAM)",
+        "Vision Transformers (ViT) and Multimodal Contrastive Learning (CLIP, SigLIP)",
+        "Data augmentation (Albumentations), OpenCV basics, OCR"
+      ],
+      "core_resources": [
+        {
+          "name": "Stanford CS231n: Deep Learning for Computer Vision",
+          "url": "https://cs231n.stanford.edu/",
+          "note": "Gold standard lectures and notes"
+        },
+        {
+          "name": "Hugging Face Computer Vision Course",
+          "url": "https://huggingface.co/learn/computer-vision-course",
+          "note": "Covers CNNs, ViTs, segmentation, and multimodal vision"
+        },
+        {
+          "name": "Ultralytics YOLO Documentation & OpenCV Course",
+          "url": "https://docs.ultralytics.com/",
+          "note": "Practical real-time object detection"
+        },
+        {
+          "name": "Kaggle Learn: Computer Vision",
+          "url": "https://www.kaggle.com/learn/computer-vision",
+          "note": "Quick foundational certificate"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "PyImageSearch Free Tutorials",
+          "url": "https://pyimagesearch.com/",
+          "note": "Practical OpenCV and vision guides"
+        }
+      ],
+      "from_scratch_exercise": "Implement Intersection over Union (IoU), Non-Maximum Suppression (NMS), and patch embeddings for a Vision Transformer in NumPy/PyTorch.",
+      "projects": [
+        "Train a custom object detector with YOLO on your own labeled dataset",
+        "Medical or document image classifier using ViT or ResNet transfer learning",
+        "Real-time webcam application with OpenCV and PyTorch"
+      ],
+      "done_when": "You have trained and evaluated a custom object detection or segmentation model on custom data."
+    },
+    {
+      "id": "phase-7",
+      "phase_number": 7,
+      "title": "LLMs, Agents, and Generative AI",
+      "duration": "10 to 12 weeks",
+      "parallel_with": null,
+      "topics": [
+        "LLM internals: pretraining, scaling laws, instruction tuning (SFT), RLHF, DPO, GRPO (reasoning models)",
+        "Prompt engineering, Context Engineering, and structured outputs (Pydantic)",
+        "Parameter-Efficient Fine-Tuning: LoRA, QLoRA, PEFT, Unsloth",
+        "RAG (Retrieval-Augmented Generation): vector databases, embeddings, hybrid chunking, evaluation (RAGAS)",
+        "AI Agents: tool use, function calling, multi-step planning, Model Context Protocol (MCP)",
+        "Generative vision models: VAEs, GANs, Diffusion Models (Stable Diffusion, Flux)",
+        "Running quantized models locally (Ollama, llama.cpp)"
+      ],
+      "core_resources": [
+        {
+          "name": "Hugging Face Courses: AI Agents Course, MCP Course, Context Course, & Smol Course",
+          "url": "https://huggingface.co/learn",
+          "note": "Free courses with official completion certificates"
+        },
+        {
+          "name": "Anthropic Academy (Claude API, MCP, Subagents, Prompt Engineering)",
+          "url": "https://anthropic.skilljar.com/",
+          "note": "100% free interactive courses with certificates"
+        },
+        {
+          "name": "Google & Kaggle 5-Day Gen AI & AI Agents Intensive",
+          "url": "https://www.kaggle.com/learn-guide/5-day-agents",
+          "note": "Covers Agent Development Kit (ADK), MCP, and Google Antigravity"
+        },
+        {
+          "name": "Sebastian Raschka: Build a Large Language Model (From Scratch) GitHub Repo",
+          "url": "https://github.com/rasbt/LLMs-from-scratch",
+          "note": "Free end-to-end PyTorch code repo"
+        },
+        {
+          "name": "DeepLearning.AI Short Courses",
+          "url": "https://www.deeplearning.ai/short-courses/",
+          "note": "Videos are free to watch; run the code locally on your machine/Colab"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "Lilian Weng's Technical Blog",
+          "url": "https://lilianweng.github.io/",
+          "note": "Deep technical surveys on Agents, Diffusion, and RLHF"
+        },
+        {
+          "name": "Stanford CS25: Transformers United",
+          "url": "https://web.stanford.edu/class/cs25/",
+          "note": "Research seminars from frontier LLM builders"
+        },
+        {
+          "name": "fast.ai Part 2: Stable Diffusion from the Foundations",
+          "url": "https://course.fast.ai/Lessons/part2.html",
+          "note": "Build diffusion models from scratch"
+        }
+      ],
+      "from_scratch_exercise": "Implement a Low-Rank Adaptation (LoRA) linear layer wrapper in pure PyTorch and a vector cosine-similarity retriever in NumPy.",
+      "projects": [
+        "Build a hybrid RAG chatbot over your own documents with evaluation metrics (compatible with local Ollama or Gemini API)",
+        "Fine-tune a small open model (Qwen, Llama, or Mistral) with QLoRA on Google Colab",
+        "Build a multi-step tool-using AI Agent using MCP and structured outputs",
+        "Train a miniature diffusion model (DDPM) on a toy image dataset"
+      ],
+      "done_when": "You have fine-tuned an open-weights LLM with QLoRA, built an MCP-enabled agent, and evaluated a RAG pipeline."
+    },
+    {
+      "id": "phase-8",
+      "phase_number": 8,
+      "title": "Reinforcement Learning",
+      "duration": "6 to 8 weeks",
+      "parallel_with": null,
+      "topics": [
+        "Markov Decision Processes (MDPs) and Bellman equations",
+        "Value-based methods: Q-learning, Deep Q-Networks (DQN)",
+        "Policy gradients, Actor-Critic, Proximal Policy Optimization (PPO)",
+        "Exploration vs exploitation",
+        "RL for LLMs: RLHF, DPO, and GRPO (Group Relative Policy Optimization)"
+      ],
+      "core_resources": [
+        {
+          "name": "Hugging Face Deep RL Course",
+          "url": "https://huggingface.co/learn/deep-rl-course",
+          "note": "Free with completion certificate"
+        },
+        {
+          "name": "Sutton and Barto: Reinforcement Learning: An Introduction",
+          "url": "http://incompleteideas.net/book/the-book-2nd.html",
+          "note": "Free foundational PDF textbook"
+        },
+        {
+          "name": "David Silver's RL Course (DeepMind / UCL)",
+          "url": "https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ",
+          "note": "Classic lecture series for MDP and Bellman intuition"
+        },
+        {
+          "name": "Gymnasium Documentation",
+          "url": "https://gymnasium.farama.org/",
+          "note": "Modern maintained replacement for deprecated OpenAI Gym"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "UC Berkeley CS285: Deep Reinforcement Learning (Sergey Levine)",
+          "url": "https://rail.eecs.berkeley.edu/deeprlcourse/",
+          "note": "Advanced mathematical RL lectures"
+        },
+        {
+          "name": "OpenAI Spinning Up in Deep RL",
+          "url": "https://spinningup.openai.com/",
+          "note": "Written in 2018; use for theory concepts only, use Gymnasium for code"
+        }
+      ],
+      "from_scratch_exercise": "Implement tabular Q-Learning and REINFORCE policy gradients in pure NumPy.",
+      "projects": [
+        "Solve CartPole and LunarLander with DQN, then PPO using Gymnasium",
+        "Train an RL agent on a custom Gymnasium environment"
+      ],
+      "done_when": "Your trained PPO agent consistently solves LunarLander-v3 and you can explain the PPO clipped surrogate objective."
+    },
+    {
+      "id": "phase-9",
+      "phase_number": 9,
+      "title": "Specialized Subdomains (Pick Based on Interest)",
+      "duration": "Pick as needed",
+      "parallel_with": null,
+      "topics": [
+        "Adversarial ML and AI Security: NIST AI RMF, MITRE ATLAS, OWASP Top 10 for LLM Apps",
+        "Time Series Forecasting: ARIMA, Prophet, Temporal Fusion Transformers",
+        "Recommender Systems: Collaborative filtering, two-tower architectures",
+        "Graph Neural Networks (GNNs): PyTorch Geometric",
+        "Speech and Audio AI: Whisper, TTS, audio transformers",
+        "Explainable AI (XAI) & AI Safety"
+      ],
+      "core_resources": [
+        {
+          "name": "Databricks AI Security Fundamentals & OWASP Top 10 for LLMs",
+          "url": "https://genai.owasp.org/",
+          "note": "Ideal for combining AI with Cybersecurity"
+        },
+        {
+          "name": "Forecasting: Principles and Practice (Hyndman)",
+          "url": "https://otexts.com/fpp3/",
+          "note": "Free online time-series textbook"
+        },
+        {
+          "name": "Stanford CS224W: Machine Learning with Graphs",
+          "url": "https://web.stanford.edu/class/cs224w/",
+          "note": "Free lectures on Graph Neural Networks"
+        },
+        {
+          "name": "Hugging Face Audio Course",
+          "url": "https://huggingface.co/learn/audio-course",
+          "note": "Free course and certificate on speech/audio models"
+        },
+        {
+          "name": "Christoph Molnar: Interpretable Machine Learning",
+          "url": "https://christophm.github.io/interpretable-ml-book/",
+          "note": "Free online book on SHAP, LIME, and XAI"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "BlueDot Impact: AI Safety Fundamentals",
+          "url": "https://aisafetyfundamentals.com/",
+          "note": "Free alignment and governance curriculum"
+        }
+      ],
+      "from_scratch_exercise": "Implement FGSM (Fast Gradient Sign Method) adversarial examples in PyTorch or a collaborative filtering matrix factorization model in NumPy.",
+      "projects": [
+        "Build an LLM prompt-injection & adversarial robustness scanner (AI Security track) OR a specialized domain project from your chosen track."
+      ],
+      "done_when": "You have completed one deep-dive project in your chosen specialization track."
+    },
+    {
+      "id": "phase-10",
+      "phase_number": 10,
+      "title": "MLOps and Production Deployment",
+      "duration": "4 to 6 weeks",
+      "parallel_with": null,
+      "topics": [
+        "REST API serving with FastAPI and Pydantic",
+        "Containerization with Docker and CI/CD with GitHub Actions",
+        "Experiment tracking (MLflow, Weights & Biases) and Data Version Control (DVC)",
+        "High-throughput LLM serving (vLLM) and edge quantization (ONNX, GGUF)",
+        "Cloud deployment (Google Cloud Run, Firebase, Hugging Face Spaces) and drift monitoring"
+      ],
+      "core_resources": [
+        {
+          "name": "Made With ML (Goku Mohandas)",
+          "url": "https://madewithml.com/",
+          "note": "Best free end-to-end production MLOps course"
+        },
+        {
+          "name": "DataTalks.Club MLOps Zoomcamp",
+          "url": "https://github.com/DataTalksClub/mlops-zoomcamp",
+          "note": "Free cohort/self-paced course with capstone certificate"
+        },
+        {
+          "name": "FastAPI & Docker Official Getting Started Guides",
+          "url": "https://fastapi.tiangolo.com/tutorial/",
+          "note": "Core production engineering docs"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "Full Stack Deep Learning",
+          "url": "https://fullstackdeeplearning.com/",
+          "note": "Production ML lifecycle lectures"
+        }
+      ],
+      "from_scratch_exercise": "Write a custom drift-detection middleware (Population Stability Index / KS-test) and latency logger for a FastAPI model endpoint.",
+      "projects": [
+        "Take your best model from an earlier phase, wrap it in FastAPI, containerize it with Docker, add CI/CD and drift monitoring, and deploy it publicly on Cloud Run or Hugging Face Spaces."
+      ],
+      "done_when": "Your model is live at a public URL with automated tests, Docker packaging, and request monitoring."
+    },
+    {
+      "id": "phase-11",
+      "phase_number": 11,
+      "title": "Research Skills, Specialization, and Portfolio",
+      "duration": "Ongoing",
+      "parallel_with": null,
+      "topics": [
+        "Reading papers weekly: arXiv (cs.LG, cs.CL, cs.CV), Hugging Face Daily Papers, AlphaXiv, CatalyzeX",
+        "Paper reproduction methodology (ResNet, Attention Is All You Need, DDPM, LoRA)",
+        "Competitive ML & Hackathons: Kaggle, Hugging Face Hackathons, Zindi",
+        "Open-source contributions: scikit-learn, Hugging Face, PyTorch good first issues",
+        "Technical writing and portfolio curation"
+      ],
+      "core_resources": [
+        {
+          "name": "Hugging Face Daily Papers & CatalyzeX",
+          "url": "https://huggingface.co/papers",
+          "note": "Replaces retired Papers With Code for tracking daily papers and code implementations"
+        },
+        {
+          "name": "Andrew Ng: How to Read Research Papers (YouTube)",
+          "url": "https://www.youtube.com/watch?v=733m6qBH-jI",
+          "note": "Multi-pass strategy for reading ML papers"
+        }
+      ],
+      "reference_resources": [
+        {
+          "name": "Two Minute Papers (YouTube)",
+          "url": "https://www.youtube.com/@TwoMinutePapers",
+          "note": "High-level visual summaries of new research"
+        }
+      ],
+      "from_scratch_exercise": "Reproduce the core architecture and key ablation table of a landmark arXiv paper from scratch in PyTorch.",
+      "projects": [
+        "Reproduce 2 to 3 landmark papers (e.g., ResNet, Attention Is All You Need, DDPM, LoRA)",
+        "Publish 3 technical blog posts explaining what you built",
+        "Curate a public portfolio of 5 to 7 strong deployed GitHub projects with clear READMEs, architecture diagrams, and live demos"
+      ],
+      "done_when": "You have 5+ deployed portfolio projects, 3 technical articles, and 1 reproduced research paper on your GitHub."
+    }
+  ],
+  "milestones": [
+    {
+      "id": "m-1",
+      "phase_range": "Phase 0 to 2",
+      "label": "Python, math basics, Pandas, one EDA notebook published"
+    },
+    {
+      "id": "m-2",
+      "phase_range": "Phase 3",
+      "label": "ML Specialization finished, 3 classical ML projects, one Kaggle submission"
+    },
+    {
+      "id": "m-3",
+      "phase_range": "Phase 4",
+      "label": "Backprop implemented from scratch, CNN trained on CIFAR-10"
+    },
+    {
+      "id": "m-4",
+      "phase_range": "Phase 5",
+      "label": "Fine-tuned BERT, built a mini-GPT and BPE tokenizer from scratch"
+    },
+    {
+      "id": "m-5",
+      "phase_range": "Phase 6",
+      "label": "Custom YOLO object detector built and ViT transfer learning completed"
+    },
+    {
+      "id": "m-6",
+      "phase_range": "Phase 7",
+      "label": "RAG app deployed, QLoRA fine-tune completed, working MCP agent built"
+    },
+    {
+      "id": "m-7",
+      "phase_range": "Phase 8",
+      "label": "PPO agent solving LunarLander"
+    },
+    {
+      "id": "m-8",
+      "phase_range": "Phase 10",
+      "label": "One model deployed publicly with Docker and FastAPI"
+    },
+    {
+      "id": "m-9",
+      "phase_range": "Phase 11",
+      "label": "5+ portfolio projects, 3 blog posts, 1 paper reproduced"
+    }
+  ],
+  "certifications": [
+    {
+      "id": "cert-kaggle",
+      "name": "Kaggle Learn Micro-Certificates (Python, Pandas, ML, DL, CV, NLP, SQL)",
+      "provider": "Kaggle",
+      "url": "https://www.kaggle.com/learn",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Free certificate of completion awarded immediately after finishing each micro-course.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-google-kaggle-agents",
+      "name": "5-Day AI Agents Intensive & Vibe Coding with Google Antigravity",
+      "provider": "Google & Kaggle",
+      "url": "https://www.kaggle.com/learn-guide/5-day-agents",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Covers Google ADK, MCP, and Google Antigravity; awards a free Kaggle badge/certificate on capstone completion.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-anthropic-academy",
+      "name": "Anthropic Academy (Claude API, Model Context Protocol, Claude Code, Subagents)",
+      "provider": "Anthropic",
+      "url": "https://anthropic.skilljar.com/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Over 20 self-paced courses issuing free official completion certificates.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-huggingface",
+      "name": "Hugging Face Course Certificates (AI Agents, Deep RL, Audio, MCP, Context, LLM Ch 1 & 3)",
+      "provider": "Hugging Face",
+      "url": "https://huggingface.co/learn",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Free verified certificates upon passing hands-on unit challenges. Note: Diffusion Course currently has no certificate.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-openai-academy",
+      "name": "OpenAI Academy Pathways (AI Foundations, Applied AI, Agents & Workflows)",
+      "provider": "OpenAI",
+      "url": "https://academy.openai.com/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Free Accredible digital badges and pathway certificates when scoring 80%+ on course assessments.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-cs50-ai",
+      "name": "CS50's Introduction to AI with Python & CS50P",
+      "provider": "Harvard University",
+      "url": "https://cs50.harvard.edu/ai/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free (via CS50 OCW)",
+      "notes": "Free downloadable certificate from Harvard CS50 site after scoring 70%+ on all projects (do not pay for edX verified track).",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-freecodecamp-ml",
+      "name": "Machine Learning with Python & Data Analysis with Python",
+      "provider": "freeCodeCamp",
+      "url": "https://www.freecodecamp.org/learn/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Free verifiable certification after submitting 5 required Python projects per track.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-datatalks-zoomcamp",
+      "name": "MLOps Zoomcamp, ML Zoomcamp & LLM Zoomcamp",
+      "provider": "DataTalks.Club",
+      "url": "https://datatalks.club/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Free certificate awarded upon completing peer-reviewed capstone projects.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-databricks",
+      "name": "Databricks Accreditations (GenAI, AI Agents, AI Security, Databricks Fundamentals)",
+      "provider": "Databricks Academy",
+      "url": "https://credentials.databricks.com/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Free self-paced learning and official accreditation badge upon passing the online assessment.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-oracle-oci-ai",
+      "name": "OCI 2026 AI Foundations Associate (1Z0-1122)",
+      "provider": "Oracle University",
+      "url": "https://mylearn.oracle.com/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free (Course + Exam)",
+      "notes": "Both the training path and official certification exam are completely free on Oracle MyLearn.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-ibm-skillsbuild",
+      "name": "AI Fundamentals, GenAI in Action & Cybersecurity Fundamentals",
+      "provider": "IBM SkillsBuild",
+      "url": "https://skillsbuild.org/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Issues official Credly-verified digital badges and completion certificates.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-cisco-netacad",
+      "name": "Introduction to Modern AI & Data Science Essentials",
+      "provider": "Cisco Networking Academy",
+      "url": "https://www.netacad.com/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Free self-paced modules with official Credly badges and completion certificates.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-elements-of-ai",
+      "name": "Elements of AI & Ethics of AI",
+      "provider": "University of Helsinki",
+      "url": "https://www.elementsofai.com/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "100% Free",
+      "notes": "Free conceptual certificate upon completing exercises.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-google-skills",
+      "name": "Google Skills (formerly Cloud Skills Boost) GenAI Skill Badges",
+      "provider": "Google",
+      "url": "https://www.cloudskillsboost.google/",
+      "status": "ACTIVE_FREE",
+      "cost_model": "Free Tier Badges",
+      "notes": "Rebranded to Google Skills; offers free GenAI learning paths and digital completion badges.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-microsoft-ai901",
+      "name": "Microsoft Certified: Azure AI Fundamentals (AI-901)",
+      "provider": "Microsoft Learn",
+      "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/",
+      "status": "TRAINING_FREE_EXAM_PAID",
+      "cost_model": "Free Training / Paid Exam (Student Discounts Available)",
+      "notes": "AI-900 retired June 30, 2026 and was replaced by AI-901. Learning paths are 100% free; exam requires payment or student voucher.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-coursera-ng",
+      "name": "DeepLearning.AI Specializations (ML, DL, NLP) on Coursera",
+      "provider": "Coursera / DeepLearning.AI",
+      "url": "https://www.coursera.org/",
+      "status": "FINANCIAL_AID_REQUIRED",
+      "cost_model": "Preview Only / Apply for Financial Aid",
+      "notes": "Full free audit was replaced by Module 1 preview. Apply for Financial Aid on the course page for up to 90-100% off.",
+      "last_checked": "2026-10-14"
+    },
+    {
+      "id": "cert-nvidia-dli",
+      "name": "NVIDIA Deep Learning Institute (DLI) Self-Paced Courses",
+      "provider": "NVIDIA",
+      "url": "https://www.nvidia.com/en-us/training/online/",
+      "status": "NO_FREE_CERT",
+      "cost_model": "Free Content / Paid Certificate ($90)",
+      "notes": "Open-source notebooks (GitHub) and ~10 introductory GenAI courses are free to study, but free courses no longer grant certificates.",
+      "last_checked": "2026-10-14"
+    }
+  ]
+}
